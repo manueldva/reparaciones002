@@ -174,8 +174,8 @@ class ReceptionController extends Controller
         
         //dd($reception);
         
-        
-        $pdf = PDF::loadView('admin.receptions.printvoucher', compact('reception', 'empresa'));
+        $pdf = PDF::loadView('admin.receptions.printvoucher', compact('reception', 'empresa'))->setPaper('a5', 'portrait');
+        //$pdf = PDF::loadView('admin.receptions.printvoucher', compact('reception', 'empresa'));
 
         return $pdf->stream('reporte');
 

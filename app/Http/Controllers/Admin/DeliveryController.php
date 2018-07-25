@@ -216,7 +216,7 @@ class DeliveryController extends Controller
 
 
 
-        $pdf = PDF::loadView('admin.deliveries.printvoucher', compact('delivery', 'empresa'));
+        $pdf = PDF::loadView('admin.deliveries.printvoucher', compact('delivery', 'empresa'))->setPaper('a5', 'portrait');
 
 
         return $pdf->stream('reporte');
